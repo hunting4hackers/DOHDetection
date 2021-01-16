@@ -188,15 +188,15 @@ namespace DetectingDOH
                                     }
                                     
                                     Process p = new Process();
-                                    p.StartInfo.FileName = "nslookup.exe";
+                                    p.StartInfo.FileName = "nslookup.exe";   //sending to locked down receive only pi-hole.  Expect no response.
                                     p.StartInfo.CreateNoWindow = true;
                                     p.StartInfo.Arguments = nslookupArgs;
                                     p.StartInfo.UseShellExecute = false;
-                                    //p.Start();
+                                    p.Start();
                                     //Console.WriteLine(".");
                                     //Console.WriteLine(p.Id);
                                     //Console.WriteLine("-");
-                                    //Thread.Sleep(300);
+                                    Thread.Sleep(300);
                                     p.Kill();
                                     //Console.Write(".");
                                     //output = p.StandardOutput.ReadToEnd();
